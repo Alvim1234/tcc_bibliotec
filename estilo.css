@@ -1,21 +1,9 @@
 p {
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body {
-    background-color: #620096;
-}
-
-.container {
-    width: 90vw;
-    height: 85vh;
-
-    display: flex;
-
-    background: white;
-    border-radius: 15px;
-
-    margin: 30px auto;
+    background-color: #2D1F46;
 }
 
 .container_left {
@@ -24,14 +12,100 @@ body {
     border-radius: 10px 0px 0px 10px;
 }
 
-.container_right {
-    flex: 1;
-    padding: 30px;
-    border-radius: 10px;
-}
-
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
+}
+
+body {
+    background-color: #2D1F46;
+}
+
+.container {
+    width: 90vw;
+    height: 90vh;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.container_right {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.container_right img {
+    width: 180px;
+    height: 180px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 30px;
+    margin-top: -100px;
+}
+
+.menu button {
+    font-size: 30px;
+}
+
+.nave:hover{
+color: #2D1F46 !important;
+transition: 0.3s !important;
+}
+
+.tracinho{
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+}
+.tracinho::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+.tracinho:hover{
+    color: #2D1F46 !important;
+    transition: 0.3s;
+}
+.tracinho:hover::after{
+    background-color: #2D1F46;
+}
+.reservar{
+    border-radius: 60px !important;
+}
+
+.lado-esquerdo::before {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-color: #422c5e;
+    border-radius: 50%;
+    top: -60px;
+    left: -55px;
+}
+
+
+/* Círculo inferior */
+
+.lado-esquerdo::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #69335d;
+    border-radius: 50%;
+    bottom: -75px;
+    right: -15px;
 }
