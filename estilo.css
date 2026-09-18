@@ -1,111 +1,893 @@
-p {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
+
     background-color: #2D1F46;
+
+    min-height: 100vh;
 }
 
-.container_left {
-    width: 18%;
-    background: #d9d9d9;
-    border-radius: 10px 0px 0px 10px;
+button,
+input {
+    font-family: inherit;
 }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-}
 
-body {
-    background-color: #2D1F46;
-}
+/* =========================================
+   PÁGINA
+========================================= */
 
-.container {
-    width: 90vw;
-    height: 90vh;
-    margin: 30px auto;
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.container_right {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color: white;
-}
-
-.container_right img {
-    width: 180px;
-    height: 180px;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-left: 30px;
-    margin-top: -100px;
-}
-
-.menu button {
-    font-size: 30px;
-}
-
-.nave:hover{
-color: #2D1F46 !important;
-transition: 0.3s !important;
-}
-
-.tracinho{
-    display: inline-block;
-    text-decoration: none;
+.pagina {
     position: relative;
-}
-.tracinho::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-}
-.tracinho:hover{
-    color: #2D1F46 !important;
-    transition: 0.3s;
-}
-.tracinho:hover::after{
-    background-color: #2D1F46;
-}
-.reservar{
-    border-radius: 60px !important;
+    width: 94vw;
+    max-width: 1200px;
+    height: 94vh;
+    min-height: 600px;
+    margin: 2vh auto;
+    background-color: white;
+    border-radius: 14px;
 }
 
-.lado-esquerdo::before {
+/*
+   Fundo branco da tela.
+   Fica acima das bolas e abaixo dos elementos.
+*/
+
+.pagina::before {
     content: "";
+
     position: absolute;
+
+    inset: 0;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    z-index: 4;
+}
+
+/* =========================================
+   BOLAS DECORATIVAS
+========================================= */
+
+.circulo {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 4;
+}
+
+/* Bola superior esquerda */
+
+.circulo-topo {
     width: 170px;
     height: 170px;
+
     background-color: #422c5e;
-    border-radius: 50%;
+
     top: -60px;
-    left: -55px;
+    left: -170px;
+}
+
+/* Bola direita */
+
+.circulo-direita {
+    width: 130px;
+    height: 130px;
+
+    background-color: #5a356f;
+
+    right: -140px;
+    top: 290px;
 }
 
 
-/* Círculo inferior */
+/* =========================================
+   CABEÇALHO
+========================================= */
 
-.lado-esquerdo::after {
-    content: "";
-    position: absolute;
+.cabecalho {
+    position: relative;
+
+    z-index: 5;
+
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 15px 38px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-area {
     width: 150px;
-    height: 150px;
-    background-color: #69335d;
+
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.logo-area img {
+    width: 105px;
+    height: auto;
+}
+
+
+/* =========================================
+   MENU SUPERIOR
+========================================= */
+
+.menu-principal {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    white-space: nowrap;
+}
+
+
+.menu-item {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #35284d;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: color 0.15s ease;
+}
+
+
+/* Quando passa o mouse */
+
+.menu-item:hover {
+    color: #754ec4;
+}
+
+
+/* Sublinhado da opção ativa */
+
+.menu-item.ativo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -7px;
+
+    height: 2px;
+
+    background-color: #35284d;
+
+    transition: background-color 0.15s ease;
+}
+
+
+/*
+   Quando passar o mouse em LIVROS,
+   o tracejado fica roxo.
+*/
+
+.menu-item.ativo:hover::after {
+    background-color: #754ec4;
+}
+
+
+/* =========================================
+   USUÁRIO
+========================================= */
+
+.usuario {
+    margin-left: auto;
+
+    width: 28px;
+    height: 28px;
+
     border-radius: 50%;
-    bottom: -75px;
-    right: -15px;
+
+    background-color: #df2e34;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   NOME DO LIVRO
+========================================= */
+
+.nome-livro {
+    position: relative;
+
+    z-index: 4;
+
+    width: 59%;
+
+    height: 52px;
+
+    margin: -10px auto 0;
+
+    background-color: #d8d8d8;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.nome-livro h1 {
+    font-size: 28px;
+
+    font-weight: 400;
+
+    color: #111;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   CONTEÚDO DO LIVRO
+========================================= */
+
+.conteudo-livro {
+    position: relative;
+
+    z-index: 4;
+
+    width: 82%;
+
+    margin: 20px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 38% 50%;
+
+    column-gap: 12%;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   CAPA
+========================================= */
+
+.area-capa {
+    width: 100%;
+
+    overflow: visible;
+}
+
+
+.capa-livro {
+    width: 100%;
+    height: 275px;
+
+    background-color: #9270f7;
+
+    border-radius: 18px 18px 0 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   DESENHO DA CAPA
+========================================= */
+
+.capa-desenho {
+    position: relative;
+
+    width: 50%;
+    height: 80%;
+
+    border: 2px solid #222;
+
+    border-radius: 20px 0 0 20px;
+}
+
+
+.capa-linha {
+    position: absolute;
+
+    width: 100%;
+
+    height: 36px;
+
+    left: 0;
+
+    bottom: 0;
+
+    border-top: 2px solid #222;
+
+    border-radius: 25px 0 0 25px;
+}
+
+
+/* =========================================
+   AVALIAÇÃO
+========================================= */
+
+.avaliacao {
+    display: block;
+
+    width: 100%;
+
+    height: 70px;
+
+    background-color: #b0ace9;
+
+    border-radius: 0 0 18px 18px;
+
+    padding: 7px 12px;
+
+    overflow: visible;
+}
+
+/* Estrelas */
+
+.estrelas {
+    display: flex;
+
+    align-items: center;
+
+    height: 28px;
+
+    color: #1e1b26;
+
+    white-space: nowrap;
+}
+
+
+.estrelas span {
+    display: inline-block;
+
+    font-size: 25px;
+
+    line-height: 25px;
+}
+
+
+.estrelas strong {
+    margin-left: 5px;
+
+    font-size: 16px;
+
+    font-weight: 400;
+}
+
+
+/* Número de avaliações */
+
+.numero-avaliacoes {
+    font-size: 14px;
+
+    color: #17131d;
+
+    margin-top: 1px;
+}
+
+
+.numero-avaliacoes strong {
+    margin-left: 5px;
+}
+
+
+/* =========================================
+   DESCRIÇÃO
+========================================= */
+
+.area-descricao {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.descricao-box {
+    width: 100%;
+
+    height: 300px;
+
+    background-color: #d8d8d8;
+
+    border-radius: 18px;
+
+    padding: 14px 25px;
+}
+
+
+.descricao-box h2 {
+    text-align: center;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    color: #171717;
+}
+
+
+.descricao-box p {
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #222;
+}
+
+
+/* =========================================
+   BOTÃO RESERVAR
+========================================= */
+
+.btn-reservar {
+    width: 72%;
+
+    height: 34px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background-color: #08a914;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.btn-reservar:hover {
+    background-color: #078d11;
+}
+
+
+/* =========================================
+   CONFIGURAÇÕES
+========================================= */
+
+/*
+   Como agora temos o cabeçalho em cima,
+   o menu lateral começa abaixo dele.
+*/
+
+.configuracoes-container {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    height: calc(100% - 125px);
+
+    display: flex;
+}
+
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+
+.menu-lateral {
+    position: relative;
+
+    width: 150px;
+
+    flex-shrink: 0;
+
+    background-color: #c7c7c7;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 0 0 0 20px;
+}
+
+
+/* =========================================
+   ESPAÇO DO LOGO
+========================================= */
+
+.logo-config {
+    height: 20px;
+
+    flex-shrink: 0;
+}
+
+/* =========================================
+   OPÇÕES
+========================================= */
+
+.opcoes-config {
+    width: 100%;
+}
+
+
+.opcao-config {
+    position: relative;
+
+    width: 100%;
+
+    height: 34px;
+
+    border: none;
+
+    border-top: 1px solid #999;
+
+    background-color: #c7c7c7;
+
+    color: #35284d;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    padding-left: 38px;
+
+    cursor: pointer;
+}
+
+
+.opcao-config:last-child {
+    border-bottom: 1px solid #999;
+}
+
+
+.opcao-config:hover {
+    background-color: #bdbdbd;
+}
+
+
+.opcao-config.ativa {
+    background-color: #b8b8b8;
+}
+
+
+/* =========================================
+   EXCLUIR CONTA
+========================================= */
+
+.excluir-conta {
+    width: 100%;
+
+    height: 35px;
+
+    margin-top: auto;
+
+    border: none;
+
+    background-color: #ff2929;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border-radius: 0 0 0 14px;
+}
+
+
+.excluir-conta:hover {
+    background-color: #df1c1c;
+}
+
+
+/* =========================================
+   CONTEÚDO CONFIGURAÇÕES
+========================================= */
+
+.conteudo-config {
+    flex: 1;
+
+    background-color: #ffffff;
+
+    padding: 45px 55px 30px;
+
+    overflow: hidden;
+
+    border-radius: 0 0 20px 0;
+}
+
+
+.tela-config {
+    width: 100%;
+}
+
+
+.tela-config h1 {
+    color: #35284d;
+
+    font-size: 22px;
+
+    margin-bottom: 22px;
+}
+
+
+.escondida {
+    display: none;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.campo {
+    width: 100%;
+
+    margin-bottom: 11px;
+}
+
+
+.campo label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #35284d;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+.campo input {
+    width: 100%;
+
+    height: 30px;
+
+    border: 1px solid #8f8a98;
+
+    border-radius: 10px;
+
+    background-color: #d8d8d8;
+
+    padding: 5px 10px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.campo input:focus {
+    border-color: #35284d;
+}
+
+
+/* =========================================
+   SENHA
+========================================= */
+
+.input-senha {
+    position: relative;
+}
+
+
+.input-senha input {
+    padding-right: 45px;
+}
+
+
+.mostrar-senha {
+    position: absolute;
+
+    right: 8px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #222;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   BOTÃO SALVAR
+========================================= */
+
+.btn-salvar {
+    display: block;
+
+    width: 185px;
+
+    height: 50px;
+
+    margin: 30px auto 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #302047;
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.btn-salvar:hover {
+    background-color: #422c5e;
+}
+
+
+/* =========================================
+   TEXTOS
+========================================= */
+
+.texto-config {
+    max-width: 650px;
+
+    color: #333;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+.texto-config p {
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .pagina {
+        width: 96vw;
+
+        height: auto;
+
+        min-height: 95vh;
+    }
+
+
+    .cabecalho {
+        padding: 10px 20px;
+    }
+
+
+    .logo-area {
+        width: 100px;
+    }
+
+
+    .logo-area img {
+        width: 80px;
+    }
+
+
+    .menu-principal {
+        gap: 12px;
+    }
+
+
+    .menu-item {
+        font-size: 12px;
+    }
+
+
+    .conteudo-livro {
+        width: 85%;
+
+        grid-template-columns: 1fr;
+
+        row-gap: 20px;
+    }
+
+
+    .area-capa {
+        max-width: 300px;
+
+        margin: auto;
+    }
+
+
+    .area-descricao {
+        max-width: 450px;
+
+        margin: auto;
+    }
+
+
+    .configuracoes-container {
+        min-height: 650px;
+    }
+
+
+    .conteudo-config {
+        padding: 35px 25px;
+    }
+
 }

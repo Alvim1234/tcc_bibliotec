@@ -1,19 +1,351 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações</title>
-<link rel="stylesheet" href="estilo.css">
+
+    <title>Configurações - Bibliotec</title>
+
+    <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-    <div class="container">
 
-    <div class="container_left" style="background-color: gray;">
-    </div>
+    <main class="pagina configuracoes-pagina">
 
-    <div class="container_right" style="background-color: whitesmoke;">
-    </div>
-</div>
+        <!-- Bolas decorativas -->
+        <div class="circulo circulo-topo"></div>
+        <div class="circulo circulo-direita"></div>
+
+
+        <!-- CABEÇALHO -->
+        <header class="cabecalho">
+
+            <div class="logo-area">
+                <img src="Logo-Bibliotec.png" alt="Logo Bibliotec">
+            </div>
+
+
+            <nav class="menu-principal">
+
+                <a href="#" class="menu-item">
+                    HOME
+                </a>
+
+                <a href="#" class="menu-item">
+                    LIVROS
+                </a>
+
+                <a href="#" class="menu-item">
+                    AJUDA
+                </a>
+
+                <a href="#" class="menu-item ativo">
+                    CONFIGURAÇÕES
+                </a>
+
+            </nav>
+
+
+            <div class="usuario">
+                L
+            </div>
+
+        </header>
+
+
+        <!-- ÁREA DE CONFIGURAÇÕES -->
+        <div class="configuracoes-container">
+
+
+            <!-- MENU LATERAL -->
+            <aside class="menu-lateral">
+
+                <div class="logo-config">
+                    <!-- Espaço reservado para manter o menu alinhado -->
+                </div>
+
+
+                <div class="opcoes-config">
+
+                    <button
+                        class="opcao-config ativa"
+                        data-tela="conta">
+                        Conta
+                    </button>
+
+                    <button
+                        class="opcao-config"
+                        data-tela="termos">
+                        Termos
+                    </button>
+
+                    <button
+                        class="opcao-config"
+                        data-tela="site">
+                        Site
+                    </button>
+
+                    <button
+                        class="opcao-config"
+                        data-tela="sobre">
+                        Sobre
+                    </button>
+
+                    <button
+                        class="opcao-config"
+                        data-tela="trocar">
+                        Trocar Conta
+                    </button>
+
+                </div>
+
+
+                <button class="excluir-conta">
+                    Excluir conta
+                </button>
+
+            </aside>
+
+
+            <!-- CONTEÚDO -->
+            <section class="conteudo-config">
+
+
+                <!-- CONTA -->
+                <div class="tela-config" id="conta">
+
+                    <h1>Editar dados da conta</h1>
+
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="email">
+                            Email:
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="senha">
+                            Senha:
+                        </label>
+
+                        <div class="input-senha">
+
+                            <input
+                                type="password"
+                                id="senha">
+
+                            <button
+                                type="button"
+                                class="mostrar-senha"
+                                id="mostrarSenha">
+
+                                ◉
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="btn-salvar">
+                        Salvar
+                    </button>
+
+                </div>
+
+
+                <!-- TERMOS -->
+                <div
+                    class="tela-config escondida"
+                    id="termos">
+
+                    <h1>Termos de uso</h1>
+
+                    <div class="texto-config">
+
+                        <p>
+                            Aqui serão apresentados os termos
+                            de uso da Bibliotec.
+                        </p>
+
+                        <p>
+                            O conteúdo desta área poderá ser
+                            alterado posteriormente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SITE -->
+                <div
+                    class="tela-config escondida"
+                    id="site">
+
+                    <h1>Informações do site</h1>
+
+                    <div class="texto-config">
+
+                        <p>
+                            Bem-vindo à Bibliotec.
+                        </p>
+
+                        <p>
+                            Esta área poderá apresentar
+                            informações relacionadas ao
+                            funcionamento do site.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOBRE -->
+                <div
+                    class="tela-config escondida"
+                    id="sobre">
+
+                    <h1>Sobre a Bibliotec</h1>
+
+                    <div class="texto-config">
+
+                        <p>
+                            A Bibliotec é uma plataforma
+                            destinada ao gerenciamento e
+                            consulta de livros.
+                        </p>
+
+                        <p>
+                            Projeto desenvolvido para o TCC.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TROCAR CONTA -->
+                <div
+                    class="tela-config escondida"
+                    id="trocar">
+
+                    <h1>Trocar conta</h1>
+
+                    <div class="texto-config">
+
+                        <p>
+                            Aqui aparecerão futuramente as
+                            opções relacionadas à troca de
+                            usuário.
+                        </p>
+
+                    </div>
+
+
+                    <button class="btn-salvar">
+                        Trocar conta
+                    </button>
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const botoes =
+            document.querySelectorAll(".opcao-config");
+
+        const telas =
+            document.querySelectorAll(".tela-config");
+
+
+        botoes.forEach(botao => {
+
+            botao.addEventListener("click", () => {
+
+                const telaSelecionada =
+                    botao.getAttribute("data-tela");
+
+
+                botoes.forEach(item => {
+                    item.classList.remove("ativa");
+                });
+
+
+                botao.classList.add("ativa");
+
+
+                telas.forEach(tela => {
+                    tela.classList.add("escondida");
+                });
+
+
+                document
+                    .getElementById(telaSelecionada)
+                    .classList.remove("escondida");
+
+            });
+
+        });
+
+
+        /* Mostrar / esconder senha */
+
+        const campoSenha =
+            document.getElementById("senha");
+
+        const botaoSenha =
+            document.getElementById("mostrarSenha");
+
+
+        botaoSenha.addEventListener("click", () => {
+
+            if (campoSenha.type === "password") {
+
+                campoSenha.type = "text";
+
+            } else {
+
+                campoSenha.type = "password";
+
+            }
+
+        });
+
+    </script>
+
 </body>
+
 </html>

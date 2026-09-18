@@ -4,48 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descrição</title>
+
+    <title>Descrição do Livro</title>
+
     <link rel="stylesheet" href="estilo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body style="background-color: #2D1F46;">
-    <div class="container lado-esquerdo">
+<body>
 
-        <div class="container_right">
+    <main class="pagina">
 
-            <img src="Logo-Bibliotec.png" alt="Logo da Bibliotec" style="margin-right: 5%;">
+        <!-- Bolas decorativas -->
+        <div class="circulo circulo-topo"></div>
+        <div class="circulo circulo-direita"></div>
+        <div class="circulo circulo-baixo"></div>
 
-            <div class="menu">
-                <a href="#"><button type="button" class="nave btn">HOME</button></a>
-                <a href="#"><button class="nave tracinho btn" style="margin-left: 30px;">LIVROS</button></a>
-                <a href="#"><button type="button" class="nave btn" style="margin-left: 30px;">AJUDA</button></a>
-                <a href="#"><button type="button" class="nave btn" style="margin-left: 30px;">CONFIGURAÇÕES</button></a>
+
+        <!-- CABEÇALHO -->
+        <header class="cabecalho">
+
+            <div class="logo-area">
+                <img src="Logo-Bibliotec.png" alt="Logo Bibliotec">
             </div>
 
+
+            <nav class="menu-principal">
+
+                <a href="#" class="menu-item">
+                    HOME
+                </a>
+
+                <a href="#" class="menu-item ativo">
+                    LIVROS
+                </a>
+
+                <a href="#" class="menu-item">
+                    AJUDA
+                </a>
+
+                <a href="configuracoes.html" class="menu-item">
+                    CONFIGURAÇÕES
+                </a>
+
+            </nav>
+
+
+            <div class="usuario">
+                L
+            </div>
+
+        </header>
+
+
+        <!-- NOME DO LIVRO -->
+        <div class="nome-livro">
+            <h1>Nome do Livro</h1>
         </div>
 
-        <div
-            style="background-color: #D8D8D8; width: 59.5%; height: 10%; margin-left: 23.5%; display: flex; justify-content: center; align-items: center; margin-top: -90px; border-radius: 20px;">
-            <h1 id="nome_Livro" style="text-align: center;">Nome do Livro</h1>
-        </div>
 
-        <div
-            style="background-color: #9270F7; width: 30%; height: 40%; margin-left: 10%; margin-top: 3%; border-radius: 20px 20px 0 0;">
-        </div>
-        <div style="background-color: #B0ACE9; width: 30%; height: 15%; margin-left: 10%; border-radius: 0 0 20px 20px ;">
-        </div>
-        <div
-            style="background-color: #D8D8D8; width: 35%; height: 46%; margin-left: 50%; margin-top: -27.5%; border-radius: 20px; display: flex; justify-content: center;">
-            <h3 style="margin-top: 10px;">Descrição do Livro:</h3>
-        </div>
-        <button type="button" class="btn btn-success reservar" style="margin-left: 56%; margin-top: 9px; width: 300px; height: 50px; font-size: 30px; display: flex; justify-content: center; align-items: center;">Reservar</button>
+        <!-- CONTEÚDO -->
+        <section class="conteudo-livro">
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
+            <!-- CAPA E AVALIAÇÃO -->
+            <div class="area-capa">
+
+                <div class="capa-livro">
+
+                    <div class="capa-desenho">
+
+                        <div class="capa-linha"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AVALIAÇÃO -->
+                <div class="avaliacao">
+
+                    <div class="estrelas">
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+
+                        <strong>4.5</strong>
+                    </div>
+
+
+                    <div class="numero-avaliacoes">
+                        Número de avaliações:
+                        <strong>12</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESCRIÇÃO -->
+            <div class="area-descricao">
+
+                <div class="descricao-box">
+
+                    <h2>Descrição Do Livro:</h2>
+
+                    <p>
+                        Aqui ficará a descrição do livro.
+                        Esse espaço poderá receber futuramente
+                        as informações cadastradas no sistema.
+                    </p>
+
+                </div>
+
+
+                <button class="btn-reservar">
+                    Reservar
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
 
 </html>
